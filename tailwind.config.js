@@ -13,6 +13,9 @@ export default {
         action: "#0F60FF",
       },
       backgroundColor: { default: "#f5f5f5" },
+      borderRadius: {
+        50: "50%",
+      },
     },
   },
   plugins: [],

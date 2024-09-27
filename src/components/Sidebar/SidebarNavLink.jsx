@@ -14,7 +14,7 @@ const SidebarNavLink = ({ to, Icon, title, isSidebarOpen }) => {
         {({ isActive }) => {
           return (
             <>
-              <Icon />
+              <Icon className="h-5 w-5" />
               {isSidebarOpen && (
                 <span
                   className={`${isActive ? "text-primary font-semibold " : ""}`}

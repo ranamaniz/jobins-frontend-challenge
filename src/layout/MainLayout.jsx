@@ -4,7 +4,7 @@ import Header from "../components/Header/Header";
 import { useState } from "react";
 
 const MainLayout = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const handleSidebarToggle = () => {
     setIsSidebarOpen((prevState) => !prevState);
@@ -23,7 +23,9 @@ const MainLayout = () => {
         />
         <section>
           <Header />
-          <Outlet />
+          <section className="px-6">
+            <Outlet />
+          </section>
         </section>
       </section>
     </main>

@@ -28,6 +28,8 @@ const Sidebar = ({ onSidebarToggle, isSidebarOpen }) => {
           )}
         </section>
         <IconButton
+          aria-label="Toggle Sidebar"
+          aria-expanded={isSidebarOpen}
           Icon={HamburgerIcon}
           onClick={onSidebarToggle}
           className={`transition-transform duration-200 ease-in-out ${
