@@ -12,7 +12,7 @@ const MainLayout = () => {
 
   const gridCols = isSidebarOpen
     ? "grid-cols-[260px_auto]"
-    : "grid-cols-[150px_auto]";
+    : "grid-cols-[96px_auto]";
 
   return (
     <main>
