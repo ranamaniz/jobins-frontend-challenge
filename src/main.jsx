@@ -1,12 +1,12 @@
-import { lazy, StrictMode, Suspense } from "react";
+import { lazy, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import MainLayout from "./layout/MainLayout.jsx";
-import OrderManagement from "./pages/OrderManagement.jsx";
-import PlaceholderPage from "./pages/PlaceholderPage.jsx";
 
 const Dashboard = lazy(() => import("./pages/Dashboard.jsx"));
+const OrderManagement = lazy(() => import("./pages/OrderManagement.jsx"));
+const PlaceholderPage = lazy(() => import("./pages/PlaceholderPage.jsx"));
 
 const router = createBrowserRouter([
   {
@@ -15,11 +15,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: (
-          <Suspense fallback={<div>Loading...</div>}>
-            <Dashboard />
-          </Suspense>
-        ),
+        element: <Dashboard />,
       },
       { path: "order-management", element: <OrderManagement /> },
       { path: "brand", element: <PlaceholderPage /> },

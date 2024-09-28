@@ -1,7 +1,8 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Header from "../components/Header/Header";
-import { useState } from "react";
+import { Suspense, useState } from "react";
+import SuspenseFallback from "../components/SuspenseFallback/SuspenseFallback";
 
 const MainLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -15,20 +16,20 @@ const MainLayout = () => {
     : "grid-cols-[96px_auto]";
 
   return (
-    <main>
-      <section className={`grid ${gridCols}`}>
-        <Sidebar
-          onSidebarToggle={handleSidebarToggle}
-          isSidebarOpen={isSidebarOpen}
-        />
-        <section>
-          <Header />
-          <section className="px-6">
+    <section className={`grid ${gridCols}`}>
+      <Sidebar
+        onSidebarToggle={handleSidebarToggle}
+        isSidebarOpen={isSidebarOpen}
+      />
+      <section className="grid grid-rows-[auto_1fr] h-screen px-6">
+        <Header />
+        <Suspense fallback={<SuspenseFallback />}>
+          <main className="overflow-auto">
             <Outlet />
-          </section>
-        </section>
+          </main>
+        </Suspense>
       </section>
-    </main>
+    </section>
   );
 };
 

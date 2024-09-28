@@ -7,15 +7,15 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <section className="flex justify-between  py-4 px-6">
+    <header className="flex justify-between py-4 ">
       <h2 className="font-bold text-2xl">
         {PAGE_TITLES[location?.pathname] || ""}
       </h2>
-      <section className="flex gap-6">
+      <section className="flex gap-6 items-center">
         <NotificationIcon size="sm" count={4} />
-        <Avatar />
+        <Avatar src="/images/userm.png" alt="user" />
       </section>
-    </section>
+    </header>
   );
 };
 

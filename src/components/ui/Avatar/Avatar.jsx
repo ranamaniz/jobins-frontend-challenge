@@ -1,9 +1,13 @@
-import React from "react";
+const defaultUserSrc = "/images/user.png";
 
-const Avatar = ({ isActive = true }) => {
+const Avatar = ({ src = defaultUserSrc, isActive = true, alt = "avatar" }) => {
   return (
-    <section className=" w-10 h-10 rounded-50 relative bg-purple-800">
-      {/* <img src=""/> */}
+    <section className=" relative">
+      <img
+        src={src}
+        alt={alt}
+        className="w-9 h-9 rounded-50 object-scale-down bg-gray-200 overflow-hidden align-middle"
+      />
       <span
         className={`absolute bottom-0 right-1 ${
           isActive ? "bg-success" : "bg-secondary"
