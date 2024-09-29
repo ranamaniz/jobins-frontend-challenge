@@ -6,12 +6,12 @@ import SuspenseFallback from "../components/SuspenseFallback/SuspenseFallback";
 import usePageTitle from "../hooks/usePageTitle";
 import useWindowSize from "../hooks/useWindowSize";
 
-const collpasebBreakPoint = 1250;
+const collpaseBreakpoint = 1250;
 
 const MainLayout = () => {
   const { width: windowWidth } = useWindowSize();
   const [isSidebarOpen, setIsSidebarOpen] = useState(
-    windowWidth > collpasebBreakPoint || false
+    windowWidth > collpaseBreakpoint || false
   );
 
   const handleSidebarToggle = () => {
@@ -19,9 +19,13 @@ const MainLayout = () => {
   };
 
   useLayoutEffect(() => {
-    console.log(windowWidth);
-
-    setIsSidebarOpen(windowWidth > collpasebBreakPoint);
+    const hasCrossedBreakpoint = windowWidth > collpaseBreakpoint;
+    setIsSidebarOpen((prevState) => {
+      if (prevState !== hasCrossedBreakpoint) {
+        return windowWidth > collpaseBreakpoint;
+      }
+      return prevState;
+    });
   }, [windowWidth]);
 
   console.log(isSidebarOpen);
