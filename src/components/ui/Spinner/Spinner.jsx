@@ -10,12 +10,12 @@ const Spinner = ({ size = "md", info = "Loading..." }) => {
   const spinnerSize = sizeMap[size] || sizeMap["md"];
 
   return (
-    <section className="flex justify-center items-center flex-col">
+    <div className="flex justify-center items-center flex-col">
       <div
         className={`${spinnerSize} rounded-50 border-2 border-white border-t-2 animate-spin bg-transparent border-t-blue-400  `}
       ></div>
       <span className="text-secondary">{info}</span>
-    </section>
+    </div>
   );
 };
 

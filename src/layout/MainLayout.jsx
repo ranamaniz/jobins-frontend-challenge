@@ -1,34 +1,51 @@
+import { Suspense, useLayoutEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
-import Sidebar from "../components/Sidebar/Sidebar";
 import Header from "../components/Header/Header";
-import { Suspense, useState } from "react";
+import Sidebar from "../components/Sidebar/Sidebar";
 import SuspenseFallback from "../components/SuspenseFallback/SuspenseFallback";
+import usePageTitle from "../hooks/usePageTitle";
+import useWindowSize from "../hooks/useWindowSize";
+
+const collpasebBreakPoint = 1250;
 
 const MainLayout = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const { width: windowWidth } = useWindowSize();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(
+    windowWidth > collpasebBreakPoint || false
+  );
 
   const handleSidebarToggle = () => {
     setIsSidebarOpen((prevState) => !prevState);
   };
 
+  useLayoutEffect(() => {
+    console.log(windowWidth);
+
+    setIsSidebarOpen(windowWidth > collpasebBreakPoint);
+  }, [windowWidth]);
+
+  console.log(isSidebarOpen);
+
   const gridCols = isSidebarOpen
-    ? "grid-cols-[260px_auto]"
-    : "grid-cols-[96px_auto]";
+    ? "grid-cols-[260px_1fr]"
+    : "grid-cols-[64px_1fr] sm:grid-cols-[96px_1fr]";
+
+  usePageTitle();
 
   return (
-    <section className={`grid ${gridCols}`}>
+    <section
+      className={`h-screen grid ${gridCols} grid-rows-[62px_1fr] justify-around`}
+    >
       <Sidebar
         onSidebarToggle={handleSidebarToggle}
         isSidebarOpen={isSidebarOpen}
       />
-      <section className="grid grid-rows-[auto_1fr] h-screen px-6">
-        <Header />
-        <Suspense fallback={<SuspenseFallback />}>
-          <main className="overflow-auto">
-            <Outlet />
-          </main>
-        </Suspense>
-      </section>
+      <Header />
+      <Suspense fallback={<SuspenseFallback />}>
+        <main className="col-[2/3] row-[2/3] overflow-auto">
+          <Outlet />
+        </main>
+      </Suspense>
     </section>
   );
 };

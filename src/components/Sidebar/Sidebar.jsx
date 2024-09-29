@@ -3,26 +3,26 @@ import CartIcon from "../../assets/icons/cart.svg?react";
 import CirclePlusIcon from "../../assets/icons/circle-plus.svg?react";
 import HamburgerIcon from "../../assets/icons/hamburger-menu.svg?react";
 import HomeIcon from "../../assets/icons/home.svg?react";
-import Logo from "../../assets/icons/logo.svg?react";
 import StarIcon from "../../assets/icons/star.svg?react";
 
 import IconButton from "../ui/button/IconButton";
+import Icon from "../ui/Icon/Icon";
 import SidebarNavLink from "./SidebarNavLink";
 
 const Sidebar = ({ onSidebarToggle, isSidebarOpen }) => {
   return (
     <section
-      className={`bg-white p-6 h-screen ${
-        isSidebarOpen ? "w-64" : "w-24"
-      } transition-transform   duration-200    ease-in-out  `}
+      className={`bg-white px-2 py-6 sm:p-6  ${
+        isSidebarOpen ? "w-64" : "w-16  sm:w-24"
+      } transition-transform duration-200 ease-in-out col-[1/2] row-[1/3]`}
     >
       <section
         className={`flex ${
           !isSidebarOpen ? "justify-center" : "justify-between"
-        } mb-6 relative`}
+        } mb-6 items-center relative`}
       >
         <section className={`flex items-center gap-1`}>
-          <Logo className="fill-white" />
+          <Icon src="/icons/jobins-logo.svg" width={28} height={24} />
           {isSidebarOpen && (
             <h1 className="font-bold text-[22px] px-2">JoBins</h1>
           )}
@@ -32,8 +32,8 @@ const Sidebar = ({ onSidebarToggle, isSidebarOpen }) => {
           aria-expanded={isSidebarOpen}
           Icon={HamburgerIcon}
           onClick={onSidebarToggle}
-          className={`transition-transform duration-200 ease-in-out ${
-            !isSidebarOpen ? "absolute -right-6 rotate-180 " : ""
+          className={` bg-white rounded-md p-1 transition-transform duration-200 ease-in-out ${
+            !isSidebarOpen ? "absolute -right-6 sm:-right-10 rotate-180 " : ""
           } `}
         />
       </section>

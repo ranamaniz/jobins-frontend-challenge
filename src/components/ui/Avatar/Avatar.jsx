@@ -2,7 +2,7 @@ const defaultUserSrc = "/images/user.png";
 
 const Avatar = ({ src = defaultUserSrc, isActive = true, alt = "avatar" }) => {
   return (
-    <section className=" relative">
+    <div className=" relative">
       <img
         src={src}
         alt={alt}
@@ -13,7 +13,7 @@ const Avatar = ({ src = defaultUserSrc, isActive = true, alt = "avatar" }) => {
           isActive ? "bg-success" : "bg-secondary"
         } w-2 h-2 rounded-50 border border-white`}
       ></span>
-    </section>
+    </div>
   );
 };
 
