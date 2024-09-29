@@ -7,8 +7,8 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="col-[2/3] row-[1/2] flex justify-between py-4 ">
-      <h1 className="font-bold text-2xl">
+    <header className="col-[2/3] row-[1/2] flex justify-between items-center p-3 sm:p-6 ">
+      <h1 className="font-bold text-2xl middle ">
         {PAGE_TITLES[location?.pathname] || ""}
       </h1>
       <section className="flex gap-6 items-center">

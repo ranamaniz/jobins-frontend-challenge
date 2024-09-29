@@ -32,8 +32,8 @@ const Sidebar = ({ onSidebarToggle, isSidebarOpen }) => {
           aria-expanded={isSidebarOpen}
           Icon={HamburgerIcon}
           onClick={onSidebarToggle}
-          className={` bg-white rounded-md p-1 transition-transform duration-200 ease-in-out ${
-            !isSidebarOpen ? "absolute -right-6 sm:-right-10 rotate-180 " : ""
+          className={` bg-white rounded-md pr-1 py-1 transition-transform duration-200 ease-in-out ${
+            !isSidebarOpen ? "absolute -right-5 sm:-right-10 rotate-180 " : ""
           } `}
         />
       </section>

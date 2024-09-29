@@ -28,8 +28,6 @@ const MainLayout = () => {
     });
   }, [windowWidth]);
 
-  console.log(isSidebarOpen);
-
   const gridCols = isSidebarOpen
     ? "grid-cols-[260px_1fr]"
     : "grid-cols-[64px_1fr] sm:grid-cols-[96px_1fr]";
@@ -46,7 +44,7 @@ const MainLayout = () => {
       />
       <Header />
       <Suspense fallback={<SuspenseFallback />}>
-        <main className="col-[2/3] row-[2/3] overflow-auto">
+        <main className="col-[2/3] row-[2/3] p-3 sm:p-6 2xl:justify-self-center  overflow-auto">
           <Outlet />
         </main>
       </Suspense>
