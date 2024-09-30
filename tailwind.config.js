@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -14,9 +13,21 @@ export default {
         danger: "#EA5455",
         action: "#0F60FF",
       },
-      backgroundColor: { default: "#f5f5f5" },
+      backgroundColor: {
+        default: "#f5f5f5",
+        success: "#28C76F",
+        warning: "#FFC600",
+        danger: "#EA5455",
+        action: "#0F60FF",
+      },
       borderRadius: {
         50: "50%",
+      },
+      screens: {
+        xs: "425px",
+      },
+      fontFamily: {
+        sans: ["Public Sans", "sans-serif"],
       },
     },
   },

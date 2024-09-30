@@ -4,19 +4,19 @@ import Divider from "../ui/Divider";
 
 const TotalSalesCard = () => {
   return (
-    <Card className="flex flex-col md:flex-row gap-4 md:gap-8  items-baseline md:items-center">
+    <Card className="flex flex-col md:flex-row gap-4 md:gap-8  items-baseline md:items-center flex-1 lg:flex-[3_1_0%]  ">
       <img
         src="/images/finance.png"
         alt="total sales and costs icon"
-        className="hidden md:block"
+        className="hidden xl:block"
       />
-      <Divider className="hidden md:block" />
+      <Divider className="hidden xl:block" />
       <div className="flex flex-col justify-between gap-4 md:gap-8">
         <div className="flex items-center gap-4">
           <img
             src="/images/finance.png"
             alt="total sales and costs icon"
-            className="block md:hidden h-10 w-10"
+            className="block xl:hidden h-10 w-10"
           />
           <div>
             <h3 className="text-lg font-semibold text-primary">

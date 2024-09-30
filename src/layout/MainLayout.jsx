@@ -35,17 +35,17 @@ const MainLayout = () => {
   usePageTitle();
 
   return (
-    <section
-      className={`h-screen grid ${gridCols} grid-rows-[62px_1fr] justify-around`}
-    >
+    <section className={`h-screen grid ${gridCols} grid-rows-[62px_1fr]`}>
       <Sidebar
         onSidebarToggle={handleSidebarToggle}
         isSidebarOpen={isSidebarOpen}
       />
       <Header />
       <Suspense fallback={<SuspenseFallback />}>
-        <main className="col-[2/3] row-[2/3] p-3 sm:p-6 2xl:justify-self-center  overflow-auto">
-          <Outlet />
+        <main className="col-[2/3] row-[2/3] p-6 pt-0 overflow-auto grid grid-cols-1 2xl:justify-items-center">
+          <section className=" 2xl:min-w-[1128px]">
+            <Outlet />
+          </section>
         </main>
       </Suspense>
     </section>

@@ -2,12 +2,13 @@ import Card from "../ui/Card/Card";
 
 const TotalProfitCard = () => {
   return (
-    <Card className="flex  flex-col justify-between gap-4 md:gap-8">
-      <div className="flex items-center   gap-4">
+    <Card className="flex  flex-col justify-center gap-4 md:gap-8 flex-[2_1_0%] ">
+      <div className="flex items-center gap-4">
         <img src="/images/yen.png" alt="total profit icon" />
-
         <div>
-          <h3 className="text-lg font-semibold text-primary ">Total Profit</h3>
+          <h3 className="text-lg font-semibold text-primary no-wrap">
+            Total Profit
+          </h3>
           <span className="text-sm text-secondary">Last 7 days</span>
         </div>
       </div>

@@ -6,5 +6,5 @@
 body {
   @apply text-primary;
   @apply bg-default;
-  font-family: "Public Sans", sans-serif;
+  
 }
