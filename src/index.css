@@ -6,5 +6,30 @@
 body {
   @apply text-primary;
   @apply bg-default;
-  
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(231, 231, 231);
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8b909a;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8b909a;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
 }

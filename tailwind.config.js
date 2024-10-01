@@ -29,6 +29,12 @@ export default {
       fontFamily: {
         sans: ["Public Sans", "sans-serif"],
       },
+      boxShadow: {
+       'bottom-border': '0 1px 0 #E9E7FD'
+      },
+      borderColor: {
+        secondary: "#E9E7FD",
+      },
     },
   },
   plugins: [],

@@ -1,4 +1,5 @@
 import { CountrySalesCard, TotalSalesCard } from "../components/Dashboard";
+import SalesTable from "../components/Dashboard/SalesTable";
 import TotalProfitCard from "../components/Dashboard/TotalProfitCard";
 import UserCard from "../components/Dashboard/UserCard";
 
@@ -11,6 +12,7 @@ const Dashboard = () => {
         <CountrySalesCard />
       </section>
       <UserCard />
+      <SalesTable />
     </>
   );
 };

@@ -1,5 +1,5 @@
 export const PAGE_TITLES = {
-  "/": "Dashboard",
+  "/dashboard": "Dashboard",
   "/order-management": "Order Management",
   "/brand": "Brand",
   "/add-products": "Add Products",
@@ -11,3 +11,5 @@ export const ORDERS_STATUS = [
   { key: "2", label: "Completed", value: "completed" },
   { key: "3", label: "Canceled", value: "canceled" },
 ];
+
+

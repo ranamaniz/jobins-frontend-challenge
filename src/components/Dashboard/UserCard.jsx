@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { ORDERS_STATUS } from "../../utils/constants";
 import Tabs from "../Tabs";
@@ -21,9 +21,12 @@ const UserCard = () => {
   });
 
   const handleOrderStatusChange = (key, statusCode) => {
-    setSearchParams({ orders: statusCode });
+    setSearchParams((prevSearchParams) => {
+      prevSearchParams.set("orders", statusCode);
+      return prevSearchParams;
+    });
   };
-  console.log("activeTabKey", activeTabKey);
+
   return (
     <Card className="!pb-0">
       <section className="flex flex-col gap-8 lg:grid lg:grid-cols-3 lg:grid-rows-1 lg:divide-x mb-8 lg:mb-0">
