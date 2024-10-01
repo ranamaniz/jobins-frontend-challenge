@@ -1,6 +1,10 @@
 import { lazy, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import "./index.css";
 import MainLayout from "./layout/MainLayout.jsx";
 
@@ -14,7 +18,11 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       {
-        path: "",
+        path: "/",
+        element: <Navigate to="/dashboard" replace />,
+      },
+      {
+        path: "/dashboard",
         element: <Dashboard />,
       },
       { path: "order-management", element: <OrderManagement /> },

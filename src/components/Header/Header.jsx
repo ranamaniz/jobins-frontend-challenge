@@ -13,7 +13,7 @@ const Header = () => {
       </h1>
       <section className="flex gap-6 items-center">
         <NotificationIcon size="sm" count={4} />
-        <Avatar src="/images/userm.png" alt="user" />
+        <Avatar src="/images/userm.png" alt="user" showStatus />
       </section>
     </header>
   );

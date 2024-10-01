@@ -5,7 +5,7 @@ import HamburgerIcon from "../../assets/icons/hamburger-menu.svg?react";
 import HomeIcon from "../../assets/icons/home.svg?react";
 import StarIcon from "../../assets/icons/star.svg?react";
 
-import IconButton from "../ui/button/IconButton";
+import IconButton from "../ui/Button/IconButton";
 import Icon from "../ui/Icon/Icon";
 import SidebarNavLink from "./SidebarNavLink";
 
