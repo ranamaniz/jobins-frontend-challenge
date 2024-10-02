@@ -44,15 +44,14 @@ const SALES_TABLE_COLUMNS = [
 const SalesTable = () => {
   const { data: salesData, loading, error } = useFetch(getSales);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-
   return (
     <div className="mt-4">
       <Table
         dataSource={salesData?.data}
         columns={SALES_TABLE_COLUMNS}
         totalCount={salesData?.totalCount}
+        loading={loading}
+        error={error}
       />
     </div>
   );

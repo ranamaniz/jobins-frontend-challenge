@@ -4,14 +4,20 @@ const useFetch = (service, searchParams) => {
   const [data, setData] = useState({
     loading: false,
     data: undefined,
-    error: "",
+    error: undefined,
   });
 
   const fetchData = async () => {
     try {
+      setData((prevData) => ({
+        ...prevData,
+        loading: true,
+        error: undefined,
+      }));
+
       const resData = await service({ searchParams });
 
-      setData({ data: resData, loading: false, error: "" });
+      setData({ data: resData, loading: false, error: undefined });
     } catch (e) {
       setData({
         data: undefined,
