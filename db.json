@@ -1,183 +1,244 @@
 {
-  "sales": {
-    "data": [
-      {
-        "id": "#5089",
-        "name": "Joseph Wheeler",
-        "date": "2023-04-06",
-        "total": 2564,
-        "method": "CC",
-        "status": "Pending"
-      },
-      {
-        "id": "#5090",
-        "name": "Alice Johnson",
-        "date": "2023-04-07",
-        "total": 1500,
-        "method": "CC",
-        "status": "Completed"
-      },
-      {
-        "id": "#5091",
-        "name": "Michael Smith",
-        "date": "2023-04-08",
-        "total": 987,
-        "method": "CC",
-        "status": "Canceled"
-      },
-      {
-        "id": "#5092",
-        "name": "Emily Davis",
-        "date": "2023-04-09",
-        "total": 4000,
-        "method": "CC",
-        "status": "Pending"
-      },
-      {
-        "id": "#5093",
-        "name": "Sarah Brown",
-        "date": "2023-04-10",
-        "total": 1200,
-        "method": "CC",
-        "status": "Completed"
-      },
-      {
-        "id": "#5094",
-        "name": "John Doe",
-        "date": "2023-04-11",
-        "total": 2200,
-        "method": "PayPal",
-        "status": "Pending"
-      },
-      {
-        "id": "#5095",
-        "name": "Chris Evans",
-        "date": "2023-04-12",
-        "total": 3600,
-        "method": "CC",
-        "status": "Completed"
-      },
-      {
-        "id": "#5096",
-        "name": "Robert Downey",
-        "date": "2023-04-13",
-        "total": 4800,
-        "method": "CC",
-        "status": "Pending"
-      },
-      {
-        "id": "#5097",
-        "name": "Scarlett Johansson",
-        "date": "2023-04-14",
-        "total": 3200,
-        "method": "CC",
-        "status": "Completed"
-      },
-      {
-        "id": "#5098",
-        "name": "Mark Ruffalo",
-        "date": "2023-04-15",
-        "total": 2400,
-        "method": "CC",
-        "status": "Canceled"
-      },
-      {
-        "id": "#5099",
-        "name": "Chris Hemsworth",
-        "date": "2023-04-16",
-        "total": 3300,
-        "method": "CC",
-        "status": "Pending"
-      },
-      {
-        "id": "#5100",
-        "name": "Tom Hiddleston",
-        "date": "2023-04-17",
-        "total": 2900,
-        "method": "CC",
-        "status": "Completed"
-      },
-      {
-        "id": "#5101",
-        "name": "Natalie Portman",
-        "date": "2023-04-18",
-        "total": 4700,
-        "method": "CC",
-        "status": "Canceled"
-      },
-      {
-        "id": "#5102",
-        "name": "Benedict Cumberbatch",
-        "date": "2023-04-19",
-        "total": 1800,
-        "method": "PayPal",
-        "status": "Pending"
-      },
-      {
-        "id": "#5103",
-        "name": "Chris Pratt",
-        "date": "2023-04-20",
-        "total": 3500,
-        "method": "CC",
-        "status": "Completed"
-      },
-      {
-        "id": "#5104",
-        "name": "Gal Gadot",
-        "date": "2023-04-21",
-        "total": 4100,
-        "method": "CC",
-        "status": "Pending"
-      },
-      {
-        "id": "#5105",
-        "name": "Jennifer Lawrence",
-        "date": "2023-04-22",
-        "total": 2300,
-        "method": "CC",
-        "status": "Completed"
-      },
-      {
-        "id": "#5106",
-        "name": "Margot Robbie",
-        "date": "2023-04-23",
-        "total": 3400,
-        "method": "CC",
-        "status": "Pending"
-      },
-      {
-        "id": "#5107",
-        "name": "Ryan Reynolds",
-        "date": "2023-04-24",
-        "total": 2750,
-        "method": "PayPal",
-        "status": "Canceled"
-      },
-      {
-        "id": "#5108",
-        "name": "Leonardo DiCaprio",
-        "date": "2023-04-25",
-        "total": 3900,
-        "method": "CC",
-        "status": "Pending"
-      },
-      {
-        "id": "#5109",
-        "name": "Scarlett Johansson",
-        "date": "2023-04-26",
-        "total": 5200,
-        "method": "CC",
-        "status": "Completed"
-      },
-      {
-        "id": "#5110",
-        "name": "Tom Hardy",
-        "date": "2023-04-27",
-        "total": 800,
-        "method": "CC",
-        "status": "Canceled"
-      }
-    ],
-    "totalCount": 30
-  }
+  "sales": [
+    {
+      "id": "#5089",
+      "name": "Joseph Wheeler",
+      "date": "2023-04-06",
+      "total": 2564,
+      "method": "CC",
+      "status": "Pending"
+    },
+    {
+      "id": "#5090",
+      "name": "Alice Johnson",
+      "date": "2023-04-07",
+      "total": 1500,
+      "method": "CC",
+      "status": "Completed"
+    },
+    {
+      "id": "#5091",
+      "name": "Michael Smith",
+      "date": "2023-04-08",
+      "total": 987,
+      "method": "CC",
+      "status": "Canceled"
+    },
+    {
+      "id": "#5092",
+      "name": "Emily Davis",
+      "date": "2023-04-09",
+      "total": 4000,
+      "method": "CC",
+      "status": "Pending"
+    },
+    {
+      "id": "#5093",
+      "name": "Sarah Brown",
+      "date": "2023-04-10",
+      "total": 1200,
+      "method": "CC",
+      "status": "Completed"
+    },
+    {
+      "id": "#5094",
+      "name": "John Doe",
+      "date": "2023-04-11",
+      "total": 2200,
+      "method": "PayPal",
+      "status": "Pending"
+    },
+    {
+      "id": "#5095",
+      "name": "Chris Evans",
+      "date": "2023-04-12",
+      "total": 3600,
+      "method": "CC",
+      "status": "Completed"
+    },
+    {
+      "id": "#5096",
+      "name": "Robert Downey",
+      "date": "2023-04-13",
+      "total": 4800,
+      "method": "CC",
+      "status": "Pending"
+    },
+    {
+      "id": "#5097",
+      "name": "Scarlett Johansson",
+      "date": "2023-04-14",
+      "total": 3200,
+      "method": "CC",
+      "status": "Completed"
+    },
+    {
+      "id": "#5098",
+      "name": "Mark Ruffalo",
+      "date": "2023-04-15",
+      "total": 2400,
+      "method": "CC",
+      "status": "Canceled"
+    },
+    {
+      "id": "#5099",
+      "name": "Chris Hemsworth",
+      "date": "2023-04-16",
+      "total": 3300,
+      "method": "CC",
+      "status": "Pending"
+    },
+    {
+      "id": "#5100",
+      "name": "Tom Hiddleston",
+      "date": "2023-04-17",
+      "total": 2900,
+      "method": "CC",
+      "status": "Completed"
+    },
+    {
+      "id": "#5101",
+      "name": "Natalie Portman",
+      "date": "2023-04-18",
+      "total": 4700,
+      "method": "CC",
+      "status": "Canceled"
+    },
+    {
+      "id": "#5102",
+      "name": "Benedict Cumberbatch",
+      "date": "2023-04-19",
+      "total": 1800,
+      "method": "PayPal",
+      "status": "Pending"
+    },
+    {
+      "id": "#5103",
+      "name": "Chris Pratt",
+      "date": "2023-04-20",
+      "total": 3500,
+      "method": "CC",
+      "status": "Completed"
+    },
+    {
+      "id": "#5104",
+      "name": "Gal Gadot",
+      "date": "2023-04-21",
+      "total": 4100,
+      "method": "CC",
+      "status": "Pending"
+    },
+    {
+      "id": "#5105",
+      "name": "Jennifer Lawrence",
+      "date": "2023-04-22",
+      "total": 2300,
+      "method": "CC",
+      "status": "Completed"
+    },
+    {
+      "id": "#5106",
+      "name": "Margot Robbie",
+      "date": "2023-04-23",
+      "total": 3400,
+      "method": "CC",
+      "status": "Pending"
+    },
+    {
+      "id": "#5107",
+      "name": "Ryan Reynolds",
+      "date": "2023-04-24",
+      "total": 2750,
+      "method": "PayPal",
+      "status": "Canceled"
+    },
+    {
+      "id": "#5108",
+      "name": "Leonardo DiCaprio",
+      "date": "2023-04-25",
+      "total": 3900,
+      "method": "CC",
+      "status": "Pending"
+    },
+    {
+      "id": "#5109",
+      "name": "Scarlett Johansson",
+      "date": "2023-04-26",
+      "total": 5200,
+      "method": "CC",
+      "status": "Completed"
+    },
+    {
+      "id": "#5110",
+      "name": "Tom Hardy",
+      "date": "2023-04-27",
+      "total": 800,
+      "method": "CC",
+      "status": "Canceled"
+    },
+    {
+      "id": "#5111",
+      "name": "Gal Gadot",
+      "date": "2023-04-28",
+      "total": 3100,
+      "method": "CC",
+      "status": "Pending"
+    },
+    {
+      "id": "#5112",
+      "name": "Chris Evans",
+      "date": "2023-04-29",
+      "total": 2200,
+      "method": "PayPal",
+      "status": "Completed"
+    },
+    {
+      "id": "#5113",
+      "name": "Michael Jordan",
+      "date": "2023-04-30",
+      "total": 1500,
+      "method": "CC",
+      "status": "Pending"
+    },
+    {
+      "id": "#5114",
+      "name": "Emma Watson",
+      "date": "2023-05-01",
+      "total": 3400,
+      "method": "PayPal",
+      "status": "Completed"
+    },
+    {
+      "id": "#5115",
+      "name": "Dwayne Johnson",
+      "date": "2023-05-02",
+      "total": 2700,
+      "method": "CC",
+      "status": "Pending"
+    },
+    {
+      "id": "#5116",
+      "name": "Taylor Swift",
+      "date": "2023-05-03",
+      "total": 4100,
+      "method": "PayPal",
+      "status": "Completed"
+    },
+    {
+      "id": "#5117",
+      "name": "Keanu Reeves",
+      "date": "2023-05-04",
+      "total": 3800,
+      "method": "CC",
+      "status": "Canceled"
+    },
+    {
+      "id": "#5118",
+      "name": "Hugh Jackman",
+      "date": "2023-05-05",
+      "total": 4900,
+      "method": "CC",
+      "status": "Pending"
+    }
+  ]
 }

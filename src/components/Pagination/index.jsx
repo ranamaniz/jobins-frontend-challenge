@@ -73,7 +73,7 @@ const Pagination = ({
           options={perPageOptions}
           value={currentPerPage}
         />
-        of {totalCount}
+        of {Math.ceil(totalCount / 10) * 10}
       </div>
       <div className="flex gap-1">
         <IconButton
