@@ -1,7 +1,6 @@
-import Pagination from "../Pagination";
 import Spinner from "../ui/Spinner/Spinner";
 
-const Table = ({ columns, dataSource, totalCount, loading, error }) => {
+const Table = ({ columns, dataSource, loading, error }) => {
   return (
     <div className="relative">
       {loading && <Spinner className="absolute top-1/2 left-1/2 z-10 " />}
@@ -18,17 +17,17 @@ const Table = ({ columns, dataSource, totalCount, loading, error }) => {
         </span>
       )}
       <div
-        className={`overflow-x-auto rounded-2xl min-h-[415px] max-h-[415px] relative bg-white ${
+        className={`overflow-x-auto rounded-t-2xl min-h-[415px] max-h-[415px] relative bg-white ${
           loading ? "pointer-events-none opacity-50" : ""
         }`}
       >
-        <table className="w-full bg-white rounded-2xl relative border-separate border-spacing-0 min-h-full">
+        <table className="w-full bg-white rounded-t-2xl relative border-separate border-spacing-0 min-h-full">
           <thead>
             <tr>
               {columns.map((column) => (
                 <th
                   key={column.key}
-                  className="shadow-bottom-border bg-white rounded-t-2xl text-secondary font-medium text-[13px] text-left px-6 py-4 sticky top-0 "
+                  className="shadow-bottom-border bg-white rounded-t-2xl text-secondary font-medium text-[13px] text-left px-6 py-4 sticky top-0"
                 >
                   {column.title}
                 </th>
@@ -40,11 +39,12 @@ const Table = ({ columns, dataSource, totalCount, loading, error }) => {
               !error &&
               dataSource?.length > 0 &&
               dataSource?.map((data, i) => (
-                <tr key={i}>
-                  {columns.map((column) => {
+                <tr key={data?.id}>
+                  {columns.map((column, j) => {
+                    const keyId = `${data?.id}-${i}${j}`;
                     return (
                       <td
-                        key={data?.id}
+                        key={`${keyId}`}
                         className="text-left text-[15px] px-6 py-4 border-b border-b-secondary "
                       >
                         {column?.render
@@ -57,7 +57,6 @@ const Table = ({ columns, dataSource, totalCount, loading, error }) => {
               ))}
           </tbody>
         </table>
-        <Pagination count={dataSource?.length} totalCount={totalCount} />
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import Card from "../ui/Card/Card";
+import ArrowUpSuccess from "../../assets/icons/arrow-up-success.svg?react";
 
 const TotalProfitCard = () => {
   return (
@@ -16,8 +17,11 @@ const TotalProfitCard = () => {
         <span className="block text-primary font-bold text-4xl font-sans ">
           50K
         </span>
-        <span className="text-success text-sm">12% </span>
-        <span className="text-secondary text-sm">vs last 7 days</span>
+        <span className="text-success text-sm flex items-center gap-1 flex-wrap">
+          <ArrowUpSuccess />
+          12%
+          <span className="text-secondary text-sm">vs last 7 days</span>
+        </span>
       </div>
     </Card>
   );

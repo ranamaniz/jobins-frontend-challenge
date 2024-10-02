@@ -14,7 +14,7 @@
         "name": "Alice Johnson",
         "date": "2023-04-07",
         "total": 1500,
-        "method": "PayPal",
+        "method": "CC",
         "status": "Completed"
       },
       {
@@ -22,7 +22,7 @@
         "name": "Michael Smith",
         "date": "2023-04-08",
         "total": 987,
-        "method": "Bank Transfer",
+        "method": "CC",
         "status": "Canceled"
       },
       {
@@ -38,7 +38,7 @@
         "name": "Sarah Brown",
         "date": "2023-04-10",
         "total": 1200,
-        "method": "Debit Card",
+        "method": "CC",
         "status": "Completed"
       },
       {
@@ -62,7 +62,7 @@
         "name": "Robert Downey",
         "date": "2023-04-13",
         "total": 4800,
-        "method": "Bank Transfer",
+        "method": "CC",
         "status": "Pending"
       },
       {
@@ -78,7 +78,7 @@
         "name": "Mark Ruffalo",
         "date": "2023-04-15",
         "total": 2400,
-        "method": "Debit Card",
+        "method": "CC",
         "status": "Canceled"
       },
       {
@@ -94,7 +94,7 @@
         "name": "Tom Hiddleston",
         "date": "2023-04-17",
         "total": 2900,
-        "method": "Bank Transfer",
+        "method": "CC",
         "status": "Completed"
       },
       {
@@ -102,7 +102,7 @@
         "name": "Natalie Portman",
         "date": "2023-04-18",
         "total": 4700,
-        "method": "Debit Card",
+        "method": "CC",
         "status": "Canceled"
       },
       {
@@ -126,7 +126,7 @@
         "name": "Gal Gadot",
         "date": "2023-04-21",
         "total": 4100,
-        "method": "Bank Transfer",
+        "method": "CC",
         "status": "Pending"
       },
       {
@@ -134,7 +134,7 @@
         "name": "Jennifer Lawrence",
         "date": "2023-04-22",
         "total": 2300,
-        "method": "Debit Card",
+        "method": "CC",
         "status": "Completed"
       },
       {
@@ -158,7 +158,7 @@
         "name": "Leonardo DiCaprio",
         "date": "2023-04-25",
         "total": 3900,
-        "method": "Bank Transfer",
+        "method": "CC",
         "status": "Pending"
       },
       {
@@ -174,7 +174,7 @@
         "name": "Tom Hardy",
         "date": "2023-04-27",
         "total": 800,
-        "method": "Debit Card",
+        "method": "CC",
         "status": "Canceled"
       }
     ],

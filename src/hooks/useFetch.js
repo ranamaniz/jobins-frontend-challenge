@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const useFetch = (service, searchParams) => {
   const [data, setData] = useState({
@@ -7,6 +7,10 @@ const useFetch = (service, searchParams) => {
     error: undefined,
   });
 
+  const stringSearchParams = useMemo(
+    () => JSON.stringify(searchParams),
+    [searchParams]
+  );
   const fetchData = async () => {
     try {
       setData((prevData) => ({
@@ -15,7 +19,7 @@ const useFetch = (service, searchParams) => {
         error: undefined,
       }));
 
-      const resData = await service({ searchParams });
+      const resData = await service(searchParams);
 
       setData({ data: resData, loading: false, error: undefined });
     } catch (e) {
@@ -29,7 +33,7 @@ const useFetch = (service, searchParams) => {
 
   useEffect(() => {
     fetchData();
-  }, [searchParams, service]);
+  }, [stringSearchParams, service]);
 
   return data;
 };
