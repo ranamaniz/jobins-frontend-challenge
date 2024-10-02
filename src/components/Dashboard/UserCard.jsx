@@ -7,11 +7,13 @@ import Card from "../ui/Card/Card";
 
 const UserCard = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [activeTabKey] = useState(() => {
-    const orders = searchParams.get("orders");
-    if (orders) {
+
+  const [activeTabKey, setActiveTabKey] = useState(() => {
+    const statusParam = searchParams.get("status");
+    console.log("statusParam", statusParam);
+    if (statusParam) {
       const activeOrderStatus = ORDERS_STATUS.find(
-        (status) => status.value === orders
+        (status) => status.value === statusParam
       );
 
       return activeOrderStatus?.key;
@@ -20,9 +22,10 @@ const UserCard = () => {
     return "1";
   });
 
+  console.log("activeTabKey", activeTabKey);
   const handleOrderStatusChange = (key, statusCode) => {
     setSearchParams((prevSearchParams) => {
-      prevSearchParams.set("orders", statusCode);
+      prevSearchParams.set("status", statusCode);
       return prevSearchParams;
     });
   };
@@ -72,7 +75,7 @@ const UserCard = () => {
         </section>
       </section>
       <Tabs
-        defaultActiveKey={activeTabKey}
+        activeTabKey={activeTabKey}
         items={ORDERS_STATUS}
         onChange={handleOrderStatusChange}
         className=" justify-center lg:justify-start"

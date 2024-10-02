@@ -3,11 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply text-primary;
-  @apply bg-default;
-}
-
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -32,4 +27,14 @@ body {
 
 ::-webkit-scrollbar-corner {
   background: transparent;
+}
+
+body {
+  @apply text-primary;
+  @apply bg-default;
+}
+
+.translate-center {
+  @apply -translate-x-1/2;
+  @apply -translate-y-1/2;
 }

@@ -3,10 +3,12 @@ export const getSales = async (searchParams) => {
   try {
     let url = `${import.meta.env.VITE_API_BASE_URL}/sales`;
 
-    const { perPage, page } = searchParams;
-
+    const { perPage, page, status, searchString } = searchParams;
+    console.log(searchString);
     if (searchParams) {
-      url += `?_page=${page}&_limit=${perPage}`;
+      url += `?_page=${page}&_limit=${perPage}${
+        !!status ? `&status=${status}` : ""
+      }${!!searchString ? `&name_like=${searchString}` : ""}`;
     }
     console.log("url", url);
 

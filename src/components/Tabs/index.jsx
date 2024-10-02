@@ -1,9 +1,9 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-const Tabs = ({ items, onChange, defaultActiveKey, className = "" }) => {
-  const [activeKey, setActiveKey] = useState(defaultActiveKey);
-  console.log("defaultActiveKey Tabs", defaultActiveKey);
+const Tabs = ({ items, onChange, activeTabKey, className = "" }) => {
+  const [activeKey, setActiveKey] = useState(activeTabKey);
+  
 
   const handleClick = (e, key, value) => {
     setActiveKey((prevKey) => {
@@ -48,7 +48,7 @@ Tabs.propTypes = {
     })
   ).isRequired,
   onChange: PropTypes.func.isRequired,
-  defaultActiveKey: PropTypes.string.isRequired,
+  activeTabKey: PropTypes.string.isRequired,
   className: PropTypes.string,
 };
 

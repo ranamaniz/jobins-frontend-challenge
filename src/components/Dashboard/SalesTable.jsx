@@ -1,10 +1,12 @@
 import { useSearchParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import { getSales } from "../../service/salesService";
-import { STATUS_COLOR_CODE } from "../../utils/constants";
+import { ORDERS_STATUS, STATUS_COLOR_CODE } from "../../utils/constants";
 import Pagination from "../Pagination";
 
 import Table from "../Table";
+import Search from "../ui/Search";
+import { useCallback } from "react";
 
 const SALES_TABLE_COLUMNS = [
   {
@@ -57,12 +59,29 @@ const SalesTable = () => {
 
   const currentPage = parseInt(searchParams.get("page")) || 1;
   const currentPerPage = parseInt(searchParams.get("perPage")) || 10;
+  const searchString = searchParams.get("search") || "";
+
+  const getStatus = () => {
+    const statusParam = searchParams.get("status") || "";
+    const orderStatus = ORDERS_STATUS.find(
+      (status) => status.value === statusParam && status.value !== "all"
+    );
+
+    return orderStatus?.label || "";
+  };
+
+  const status = getStatus();
 
   const {
     data: salesData,
     loading,
     error,
-  } = useFetch(getSales, { page: currentPage, perPage: currentPerPage });
+  } = useFetch(getSales, {
+    page: currentPage,
+    perPage: currentPerPage,
+    status,
+    searchString,
+  });
 
   const handlePaginationChange = (perPage, page) => {
     setSearchParams((searchParams) => {
@@ -72,8 +91,24 @@ const SalesTable = () => {
     });
   };
 
+  const handleSearch = useCallback((searchValue) => {
+    setSearchParams((searchParams) => {
+      searchParams.set("search", searchValue);
+      searchParams.set("page", 1);
+      return searchParams;
+    });
+  }, []);
+
   return (
     <div className="mt-4">
+      <div className="mb-4 flex">
+        <div>
+          {/* Select */}
+
+          <Search onChange={handleSearch} value={searchString} />
+        </div>
+        <div>{/* filterby date */}</div>
+      </div>
       <Table
         dataSource={salesData?.data}
         columns={SALES_TABLE_COLUMNS}
