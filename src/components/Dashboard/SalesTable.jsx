@@ -8,6 +8,8 @@ import Table from "../Table";
 import Search from "../ui/Search";
 import { useCallback, useMemo } from "react";
 import Select from "../ui/Select";
+import DateRangePicker from "../ui/DatePicker/DateRangePicker";
+import { format, subDays } from "date-fns";
 
 const SALES_TABLE_COLUMNS = [
   {
@@ -62,6 +64,10 @@ const SalesTable = () => {
   const currentPerPage = parseInt(searchParams.get("perPage")) || 10;
   const searchString = searchParams.get("search") || "";
 
+  const startDate =
+    searchParams.get("start") || format(subDays(new Date(), 30), "yyyy-MM-dd");
+  const endDate = searchParams.get("end") || format(new Date(), "yyyy-MM-dd");
+
   const getStatus = () => {
     const statusParam = searchParams.get("status") || "all";
     const orderStatus = ORDERS_STATUS.find(
@@ -82,6 +88,8 @@ const SalesTable = () => {
     perPage: currentPerPage,
     status: status?.value,
     searchString,
+    startDate,
+    endDate,
   });
 
   const handlePaginationChange = (perPage, page) => {
@@ -114,13 +122,24 @@ const SalesTable = () => {
     });
   };
 
+  const handleDateRangeChange = (newStartDate, newEndDate) => {
+    if (newStartDate !== startDate || newEndDate !== endDate) {
+      setSearchParams((searchParams) => {
+        searchParams.set("start", newStartDate);
+        searchParams.set("end", newEndDate);
+
+        return searchParams;
+      });
+    }
+  };
+
   return (
     <div className="mt-4">
-      <div className="mb-4 flex space-between">
-        <div className="flex items-center  gap-4">
+      <div className="mb-4 flex flex-col gap-4 md:flex-row md:justify-between ">
+        <div className="flex sm:items-center gap-4 flex-col sm:flex-row">
           <Select
             options={ORDERS_STATUS}
-            className="border-none shadow w-40  "
+            className="border-none shadow min-w-40 w-full"
             onChange={handleStatusChange}
             value={status?.value}
             prefix="Status: "
@@ -131,7 +150,12 @@ const SalesTable = () => {
             className="shadow"
           />
         </div>
-        <div>{/* filterby date */}</div>
+        <DateRangePicker
+          startDate={startDate}
+          endDate={endDate}
+          onChange={handleDateRangeChange}
+          className="self-end"
+        />
       </div>
       <Table
         dataSource={salesData?.data}

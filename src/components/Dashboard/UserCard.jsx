@@ -68,7 +68,7 @@ const UserCard = () => {
         <section className="text-[13px] lg:pl-5">
           <h3 className="text-secondary font-medium mb-4">SHIPPING ADDRESS</h3>
           <p>3517 W. Gray St. Utica, Pennsylvania 57867</p>
-          <div className="grid grid-cols-3 mt-5 max-w-lg">
+          <div className="grid  grid-rows-3 grid-cols-1 xs:grid-cols-3 xs:grid-rows-1 mt-5 max-w-lg">
             <div className="flex flex-col">
               <span className="text-2xl font-bold">150</span>
               <span className="text-secondary font-medium ">Total Order</span>

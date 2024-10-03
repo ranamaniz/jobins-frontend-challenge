@@ -24,7 +24,7 @@ const Tabs = ({ items, onChange, activeTabKey, className = "" }) => {
           <button
             key={item.key}
             onClick={(e) => handleClick(e, item.key, item.value)}
-            className={`text-[15px] box-border px-6 py-4   text-secondary transition-all ease-in-out  duration-300  ${
+            className={`text-[15px] box-border px-2 py-1 xs:px-6 xs:py-4  text-secondary transition-all ease-in-out  duration-300  ${
               isActive
                 ? "border-b-2 border-b-action text-action"
                 : "border-b-2 border-b-transparent"

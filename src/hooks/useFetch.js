@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react";
 
 const useFetch = (service, searchParams) => {
-  const { currentPage, currentPerPage, status, searchString } = searchParams;
+  const {
+    currentPage,
+    currentPerPage,
+    status,
+    searchString,
+    startDate,
+    endDate,
+  } = searchParams;
 
   const [data, setData] = useState({
     loading: false,
@@ -30,7 +37,7 @@ const useFetch = (service, searchParams) => {
 
   useEffect(() => {
     fetchData();
-  }, [currentPage, currentPerPage, status, searchString]);
+  }, [currentPage, currentPerPage, status, searchString, startDate, endDate]);
 
   return data;
 };

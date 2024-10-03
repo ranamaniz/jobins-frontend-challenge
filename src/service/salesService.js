@@ -3,12 +3,17 @@ export const getSales = async (searchParams) => {
   try {
     let url = `${import.meta.env.VITE_API_BASE_URL}/sales`;
 
-    const { perPage, page, status, searchString } = searchParams;
+    const { perPage, page, status, searchString, startDate, endDate } =
+      searchParams;
 
     if (searchParams) {
       url += `?_page=${page}&_limit=${perPage}${
         !!status && status !== "all" ? `&status_like=${status}` : ""
       }${!!searchString ? `&name_like=${searchString}` : ""}`;
+    }
+
+    if (startDate && endDate) {
+      url += `&date_gte=${startDate}&date_lte=${endDate}`;
     }
 
     const res = await fetch(url);

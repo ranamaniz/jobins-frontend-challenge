@@ -28,7 +28,7 @@ const Select = ({
       <select
         name={name}
         id={id}
-        className={`outline-none border border-secondary rounded-md px-5 py-[10px] ${className}  `}
+        className={`outline-none border border-secondary rounded-md px-5 py-[10px] ${className} `}
         onChange={handleChange}
         value={selectedValue}
       >

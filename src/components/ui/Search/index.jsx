@@ -22,7 +22,7 @@ const Search = ({ onChange, value = "", className = "" }) => {
         onChange={handleChange}
         value={search}
         placeholder="Search..."
-        className={`outline-none px-4 py-2 rounded w-50 ${className}`}
+        className={`outline-none px-4 py-2 rounded min-w-50 w-full ${className} pr-7`}
       />
       <IconButton
         Icon={SearchIcon}

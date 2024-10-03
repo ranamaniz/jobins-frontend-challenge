@@ -5,7 +5,11 @@ import {
   Navigate,
   RouterProvider,
 } from "react-router-dom";
+
 import "./index.css";
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
+
 import MainLayout from "./layout/MainLayout.jsx";
 
 const Dashboard = lazy(() => import("./pages/Dashboard.jsx"));

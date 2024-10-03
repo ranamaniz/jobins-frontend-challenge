@@ -61,11 +61,11 @@ const Pagination = ({
 
   return (
     <div
-      className={`bg-white px-6 py-4 flex justify-between items-center relative ${className} border-t border-t-secondary ${
+      className={`bg-white px-6 py-4 flex flex-col xs:flex-row gap-2 justify-between items-center relative ${className} border-t border-t-secondary ${
         loading ? "pointer-events-none opacity-40" : ""
       }`}
     >
-      <div className="text-secondary text-[15px] flex items-center">
+      <div className="text-secondary text-[15px] flex flex-col xs:flex-row items-center">
         Showing
         <Select
           className="mx-2"
