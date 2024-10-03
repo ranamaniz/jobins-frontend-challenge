@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import SearchIcon from "../../../assets/icons/search.svg?react";
 import IconButton from "../Button/IconButton";
 import useDebounce from "../../../hooks/useDebounce";
 
-const Search = ({ onChange, value }) => {
+const Search = ({ onChange, value = "", className = "" }) => {
   const [search, setSearch] = useState(value);
 
-  const debouncedSearch = useDebounce({ value: search, delay: 1000 });
+  const debouncedSearch = useDebounce(search, 1000);
 
   useEffect(() => {
     onChange(debouncedSearch);
-  }, [debouncedSearch, onChange]);
+  }, [debouncedSearch]);
 
   const handleChange = (e) => {
     const searchValue = e.target.value;
@@ -22,7 +22,7 @@ const Search = ({ onChange, value }) => {
         onChange={handleChange}
         value={search}
         placeholder="Search..."
-        className="outline-none px-4 py-2 rounded w-50"
+        className={`outline-none px-4 py-2 rounded w-50 ${className}`}
       />
       <IconButton
         Icon={SearchIcon}
@@ -32,4 +32,4 @@ const Search = ({ onChange, value }) => {
   );
 };
 
-export default Search;
+export default memo(Search);

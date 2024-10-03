@@ -4,13 +4,12 @@ export const getSales = async (searchParams) => {
     let url = `${import.meta.env.VITE_API_BASE_URL}/sales`;
 
     const { perPage, page, status, searchString } = searchParams;
-    console.log(searchString);
+
     if (searchParams) {
       url += `?_page=${page}&_limit=${perPage}${
-        !!status ? `&status=${status}` : ""
+        !!status && status !== "all" ? `&status_like=${status}` : ""
       }${!!searchString ? `&name_like=${searchString}` : ""}`;
     }
-    console.log("url", url);
 
     const res = await fetch(url);
     const totalCount = res.headers.get("X-Total-Count");

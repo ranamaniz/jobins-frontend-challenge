@@ -1,32 +1,42 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { ORDERS_STATUS } from "../../utils/constants";
 import Tabs from "../Tabs";
 import Avatar from "../ui/Avatar/Avatar";
 import Card from "../ui/Card/Card";
 
+const getActiveKey = (statusParam) => {
+  const activeOrderStatus = ORDERS_STATUS.find(
+    (status) => status.value === statusParam
+  );
+
+  return activeOrderStatus?.key;
+};
+
 const UserCard = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const [activeTabKey, setActiveTabKey] = useState(() => {
-    const statusParam = searchParams.get("status");
-    console.log("statusParam", statusParam);
-    if (statusParam) {
-      const activeOrderStatus = ORDERS_STATUS.find(
-        (status) => status.value === statusParam
-      );
+  const statusParam = searchParams.get("status");
 
-      return activeOrderStatus?.key;
+  const [activeTabKey, setActiveTabKey] = useState(() => {
+    if (statusParam) {
+      return getActiveKey(statusParam);
     }
 
     return "1";
   });
 
-  console.log("activeTabKey", activeTabKey);
+  useEffect(() => {
+    const newKey = getActiveKey(statusParam);
+    if (activeTabKey !== newKey) {
+      setActiveTabKey(newKey);
+    }
+  }, [statusParam, activeTabKey]);
+
   const handleOrderStatusChange = (key, statusCode) => {
-    setSearchParams((prevSearchParams) => {
-      prevSearchParams.set("status", statusCode);
-      return prevSearchParams;
+    setSearchParams((searchParams) => {
+      searchParams.set("status", statusCode);
+      return searchParams;
     });
   };
 

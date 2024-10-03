@@ -6,7 +6,8 @@ import Pagination from "../Pagination";
 
 import Table from "../Table";
 import Search from "../ui/Search";
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
+import Select from "../ui/Select";
 
 const SALES_TABLE_COLUMNS = [
   {
@@ -62,12 +63,12 @@ const SalesTable = () => {
   const searchString = searchParams.get("search") || "";
 
   const getStatus = () => {
-    const statusParam = searchParams.get("status") || "";
+    const statusParam = searchParams.get("status") || "all";
     const orderStatus = ORDERS_STATUS.find(
-      (status) => status.value === statusParam && status.value !== "all"
+      (status) => status.value === statusParam
     );
 
-    return orderStatus?.label || "";
+    return orderStatus;
   };
 
   const status = getStatus();
@@ -79,33 +80,56 @@ const SalesTable = () => {
   } = useFetch(getSales, {
     page: currentPage,
     perPage: currentPerPage,
-    status,
+    status: status?.value,
     searchString,
   });
 
   const handlePaginationChange = (perPage, page) => {
-    setSearchParams((searchParams) => {
-      searchParams.set("perPage", perPage);
-      searchParams.set("page", page);
-      return searchParams;
-    });
+    if (perPage !== currentPerPage || page !== currentPage) {
+      setSearchParams((searchParams) => {
+        searchParams.set("perPage", perPage);
+        searchParams.set("page", page);
+        return searchParams;
+      });
+    }
   };
 
   const handleSearch = useCallback((searchValue) => {
     setSearchParams((searchParams) => {
-      searchParams.set("search", searchValue);
-      searchParams.set("page", 1);
+      if (searchParams.get("search") !== searchValue) {
+        searchParams.set("search", searchValue);
+        searchParams.set("page", 1);
+        searchParams.set("status", "all");
+      }
+
       return searchParams;
     });
   }, []);
 
+  const handleStatusChange = (e) => {
+    const status = e.target.value;
+    setSearchParams((searchParams) => {
+      searchParams.set("status", status);
+      return searchParams;
+    });
+  };
+
   return (
     <div className="mt-4">
-      <div className="mb-4 flex">
-        <div>
-          {/* Select */}
-
-          <Search onChange={handleSearch} value={searchString} />
+      <div className="mb-4 flex space-between">
+        <div className="flex items-center  gap-4">
+          <Select
+            options={ORDERS_STATUS}
+            className="border-none shadow w-40  "
+            onChange={handleStatusChange}
+            value={status?.value}
+            prefix="Status: "
+          />
+          <Search
+            onChange={handleSearch}
+            value={searchString}
+            className="shadow"
+          />
         </div>
         <div>{/* filterby date */}</div>
       </div>

@@ -1,22 +1,19 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 const useFetch = (service, searchParams) => {
+  const { currentPage, currentPerPage, status, searchString } = searchParams;
+
   const [data, setData] = useState({
     loading: false,
     data: undefined,
     error: undefined,
   });
 
-  const stringSearchParams = useMemo(
-    () => JSON.stringify(searchParams),
-    [searchParams]
-  );
   const fetchData = async () => {
     try {
       setData((prevData) => ({
         ...prevData,
         loading: true,
-        error: undefined,
       }));
 
       const resData = await service(searchParams);
@@ -33,7 +30,7 @@ const useFetch = (service, searchParams) => {
 
   useEffect(() => {
     fetchData();
-  }, [stringSearchParams, service]);
+  }, [currentPage, currentPerPage, status, searchString]);
 
   return data;
 };

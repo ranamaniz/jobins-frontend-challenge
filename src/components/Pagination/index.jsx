@@ -65,7 +65,7 @@ const Pagination = ({
         loading ? "pointer-events-none opacity-40" : ""
       }`}
     >
-      <div className="text-secondary text-[15px]">
+      <div className="text-secondary text-[15px] flex items-center">
         Showing
         <Select
           className="mx-2"

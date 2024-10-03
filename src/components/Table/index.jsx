@@ -45,7 +45,7 @@ const Table = ({ columns, dataSource, loading, error }) => {
                     return (
                       <td
                         key={`${keyId}`}
-                        className="text-left text-[15px] px-6 py-4 border-b border-b-secondary "
+                        className={`text-left text-[15px] px-6 py-4 border-b border-b-secondary`}
                       >
                         {column?.render
                           ? column?.render(data)
