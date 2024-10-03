@@ -83,14 +83,18 @@ const Pagination = ({
             handlePageChange("-");
           }}
         />
-        {pageOptions?.map((option) => (
-          <Button
-            key={option.value}
-            onClick={(e) => handlePageChange(option?.value)}
-          >
-            {option?.label}
-          </Button>
-        ))}
+        {pageOptions?.map((option) => {
+          const isActive = currentPage === option?.value;
+          return (
+            <Button
+              key={option.value}
+              onClick={(e) => handlePageChange(option?.value)}
+              isActive={isActive}
+            >
+              {option?.label}
+            </Button>
+          );
+        })}
         <IconButton
           className="px-2 py-1 rounded bg-secondary  hover:bg-secondary/[0.6] "
           Icon={ChevronRight}

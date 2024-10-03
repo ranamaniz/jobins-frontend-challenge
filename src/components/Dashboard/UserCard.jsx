@@ -9,7 +9,6 @@ const getActiveKey = (statusParam) => {
   const activeOrderStatus = ORDERS_STATUS.find(
     (status) => status.value === statusParam
   );
-
   return activeOrderStatus?.key;
 };
 

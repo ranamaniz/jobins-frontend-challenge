@@ -1,10 +1,15 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Tabs = ({ items, onChange, activeTabKey, className = "" }) => {
   const [activeKey, setActiveKey] = useState(activeTabKey);
 
- 
+  useEffect(() => {
+    if (activeTabKey !== activeKey) {
+      setActiveKey(activeTabKey);
+    }
+  }, [activeTabKey]);
+
   const handleClick = (e, key, value) => {
     setActiveKey((prevKey) => {
       if (prevKey !== key) {
