@@ -1,9 +1,39 @@
-# React + Vite
+# Jobins Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Installation
 
-Currently, two official plugins are available:
+1. **Clone the repository**:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# jobins-frontend-challenge
+   ```bash
+   git clone https://github.com/your-username/jobins-frontend-challenge.git
+   cd jobins-frontend-challenge
+
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+## Running the Application
+
+1.  Create a `.env` file in the root of your project and add the following line:
+
+    ```bash
+    VITE_API_BASE_URL="http://localhost:3000"
+    ```
+
+2.  Start the development server:
+
+    ```bash
+    npm run dev
+    ```
+
+3.  Start the JSON server:
+
+    ```bash
+    npm run server
+    ```
+
+4.  Open your browser and navigate to `http://http://localhost:5173/`.
