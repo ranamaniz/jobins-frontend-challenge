@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 const useFetch = (service, searchParams) => {
   const {
-    currentPage,
-    currentPerPage,
+    page,
+    perPage,
     status,
     searchString,
     startDate,
@@ -37,7 +37,7 @@ const useFetch = (service, searchParams) => {
 
   useEffect(() => {
     fetchData();
-  }, [currentPage, currentPerPage, status, searchString, startDate, endDate]);
+  }, [page, perPage, status, searchString, startDate, endDate]);
 
   return data;
 };

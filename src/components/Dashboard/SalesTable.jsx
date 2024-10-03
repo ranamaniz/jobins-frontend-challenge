@@ -127,6 +127,7 @@ const SalesTable = () => {
       setSearchParams((searchParams) => {
         searchParams.set("start", newStartDate);
         searchParams.set("end", newEndDate);
+        searchParams.set("page", 1);
 
         return searchParams;
       });
